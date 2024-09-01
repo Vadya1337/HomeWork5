@@ -3,28 +3,33 @@
 public class Main {
     public static void main(String[] args) {
         // задание 1 и 2
-        int clientOs = 1;
-        int clientDeviceYear = 2012;
-        if (clientOs == 1) {
+        int clientOs = 0;
+        int clientDeviceYear = 2022;
+        if (clientOs == 1 && clientDeviceYear > 2015) {
             System.out.println("Установите версию приложения для iOS по ссылке");
-            if (clientDeviceYear < 2015) {
-                System.out.println("Установите облегченную версию приложения");
-            }
-        } else if (clientOs == 0) {
+
+        } else if (clientOs == 0 && clientDeviceYear > 2015) {
             System.out.println("Установите версию приложения для Android по ссылке");
-            if (clientDeviceYear < 2015) {
-                System.out.println("Установите облегченную версию приложения");
-            }
         }
+
+        if (clientDeviceYear < 2015 && clientOs == 1) {
+            System.out.println("Установите облегченную версию приложения для iOS по ссылке");
+
+        } else if (clientDeviceYear < 2015 && clientOs == 0) {
+            System.out.println("Установите облегченную версию приложения для Android по ссылке");
+        }
+
+
         // Задание 3
 
-        int year = 2000;
+        int year = 1322;
         if (year > 1586) {
-            if ((year % 400 == 0) || (year % 4 == 0 && year % 100 != 0)) {
-                System.out.println("год високосный");
-            }
+            System.out.println();
+        }
+        if (year % 4 == 0 && year % 100 != 0 || year % 400 == 0) {
+            System.out.println(year + " год является високосным");
         } else {
-            System.out.println(" год не високосный");
+            System.out.println(year + " год не является високосным");
         }
 
         // задание 4
@@ -68,7 +73,8 @@ public class Main {
                 System.out.println("Осень");
                 break;
             default:
-            System.out.println("Такого времени года нет");
+                System.out.println();
+
         }
 
     }
